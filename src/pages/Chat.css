@@ -1,0 +1,127 @@
+.vethi{
+  background-color:rgb(17, 17, 70) ;
+  height:100vh;
+}
+#v1 {
+position: fixed;
+bottom: 20px;
+right: 20px;
+width: 400px;
+height: 550px;
+border: 2px solid #333;
+border-radius: 8px;
+box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+background-color: #f4f4f4;
+}
+
+#v2 {
+display: flex;
+flex-direction: column;
+height: 95%;
+padding: 10px;
+}
+.po2{
+color: beige;
+text-shadow: #333;
+
+}
+.po3{
+color: beige;
+text-shadow: #333;
+
+}
+
+
+#v3 {
+overflow-y: scroll;
+flex-grow: 1;
+margin-bottom: 10px;
+padding: 5px;
+background-color: whitesmoke;
+border: 1px solid #ccc;
+border-radius: 4px;
+
+}
+
+#v4 {
+padding: 8px;
+margin-right: 10px;
+border-radius: 4px;
+width:77%;
+border: 1px solid #ccc;
+}
+
+#v5 {
+background-color: #007bff;
+color: white;
+border: none;
+padding: 10px;
+cursor: pointer;
+border-radius: 4px;
+}
+
+#v5:hover {
+background-color: #0056b3;
+}
+
+.vethi1 {
+  position: relative;
+  width: 65%; 
+}
+.vethi2 {
+  position: relative;
+  width: 65%; 
+}
+
+
+@keyframes scroll {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}
+.po1 {
+  background-color: beige;
+  width: 300px; 
+  border: rgb(17, 17, 70) ;
+  padding: 50px;
+  margin: 20px;
+  position: absolute;
+  top: 20px; 
+  right: 0;
+  height: 250px;
+  border-radius: 50px;
+  box-sizing: initial;
+}
+.c1{
+background-color:beige;
+width: 100%;
+height: 50px;
+}
+.c3{
+background-color: rgb(17, 17, 70) ;
+}
+.c2 ul{
+list-style-type:none;
+margin: 0;
+padding:0;
+width: 100px;
+background-color: rgb(17, 17, 70);
+}
+.top-right-image {
+position:sticky;
+top: 10px;
+right: 20px;
+width: 400px;  
+height: 400px; 
+}
+.c6{
+text-align: center;
+}
+.c5{
+background-color: beige;
+width:fit-content;
+height: fit-content;
+}
