@@ -1,301 +1,498 @@
-/* Reset and base styles */
+/* Base Styles */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
-  }
-  
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.6;
+  color: #333;
+  background-color: #f5f7fa;
+}
+
+.app-wrapper {
+  display: flex;
+  min-height: 100vh;
+}
+
+/* Sidebar Styles */
+.app-sidebar {
+  width: 240px;
+  background-color: #2c3e50;
+  color: #ecf0f1;
+  padding: 20px 0;
+  flex-shrink: 0;
+}
+
+.app-logo {
+  padding: 0 20px 20px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  margin-bottom: 20px;
+}
+
+.app-logo h2 {
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.app-nav ul {
+  list-style: none;
+}
+
+.app-nav-item {
+  display: flex;
+  align-items: center;
+  padding: 12px 20px;
+  color: #ecf0f1;
+  text-decoration: none;
+  transition: background-color 0.3s;
+}
+
+.app-nav-item:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.app-nav-active {
+  background-color: rgba(255, 255, 255, 0.2);
+  font-weight: 600;
+}
+
+.app-nav-symbol {
+  margin-right: 12px;
+  font-size: 1.2rem;
+}
+
+/* Content Styles */
+.app-content {
+  flex: 1;
+  padding: 30px;
+  overflow-y: auto;
+}
+
+.app-header {
+  margin-bottom: 30px;
+}
+
+.app-header h1 {
+  font-size: 2rem;
+  margin-bottom: 10px;
+  color: #2c3e50;
+}
+
+.app-header p {
+  color: #7f8c8d;
+}
+
+/* Search Block */
+.app-search-block {
+  background-color: #fff;
+  border-radius: 10px;
+  padding: 25px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  margin-bottom: 30px;
+  position: relative;
+}
+
+.app-search-wrap {
+  display: flex;
+  margin-bottom: 20px;
+}
+
+.app-search-field {
+  flex: 1;
+  padding: 12px 16px;
+  border: 1px solid #e0e0e0;
+  border-radius: 5px;
+  font-size: 16px;
+  outline: none;
+  transition: border-color 0.3s;
+}
+
+.app-search-field:focus {
+  border-color: #3498db;
+}
+
+.app-voice-btn {
+  background-color: #3498db;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  width: 46px;
+  margin-left: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.app-voice-btn:hover {
+  background-color: #2980b9;
+}
+
+.app-dropdown {
+  position: absolute;
+  top: 73px;
+  left: 25px;
+  right: 81px;
+  background-color: white;
+  border: 1px solid #e0e0e0;
+  border-radius: 5px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  z-index: 10;
+  max-height: 250px;
+  overflow-y: auto;
+}
+
+.app-dropdown-item {
+  padding: 12px 16px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.app-dropdown-item:hover {
+  background-color: #f5f7fa;
+}
+
+.app-upload-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #2ecc71;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 12px 24px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  width: 100%;
+}
+
+.app-upload-btn:hover {
+  background-color: #27ae60;
+}
+
+.app-upload-btn:disabled {
+  background-color: #95a5a6;
+  cursor: not-allowed;
+}
+
+.app-upload-symbol {
+  margin-right: 10px;
+}
+
+.app-btn-active {
+  background-color: #e74c3c;
+}
+
+.app-btn-active:hover {
+  background-color: #c0392b;
+}
+
+/* Progress Bar */
+.app-progress-container {
+  margin: 20px 0;
+}
+
+.app-progress-bar {
+  width: 100%;
+  height: 10px;
+  background-color: #ecf0f1;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.app-progress-fill {
+  height: 100%;
+  background-color: #3498db;
+  transition: width 0.3s ease;
+}
+
+/* Files Section */
+.app-files-block, 
+.app-recent-block {
+  background-color: #fff;
+  border-radius: 10px;
+  padding: 25px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+.app-files-block h2,
+.app-recent-block h2 {
+  margin-bottom: 20px;
+  color: #2c3e50;
+  font-size: 1.5rem;
+}
+
+.app-no-files {
+  text-align: center;
+  color: #7f8c8d;
+  padding: 30px 0;
+}
+
+.app-files-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 20px;
+}
+
+.app-file-item {
+  background-color: #f8f9fa;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.app-file-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.app-file-symbol {
+  background-color: #e74c3c;
+  color: white;
+  width: 50px;
+  height: 50px;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+
+.app-file-info {
+  flex: 1;
+}
+
+.app-file-info h3 {
+  margin-bottom: 5px;
+  font-size: 1.1rem;
+  color: #2c3e50;
+  /* Limit to one line with ellipsis */
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.app-file-info p {
+  color: #7f8c8d;
+  font-size: 0.9rem;
+}
+
+.app-file-actions {
+  display: flex;
+  gap: 10px;
+  margin-top: 15px;
+}
+
+.app-file-btn {
+  flex: 1;
+  padding: 8px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: background-color 0.2s;
+}
+
+.app-view-btn {
+  background-color: #3498db;
+  color: white;
+}
+
+.app-view-btn:hover {
+  background-color: #2980b9;
+}
+
+.app-edit-btn {
+  background-color: #f39c12;
+  color: white;
+}
+
+.app-edit-btn:hover {
+  background-color: #d35400;
+}
+
+.app-delete-btn {
+  background-color: #e74c3c;
+  color: white;
+}
+
+.app-delete-btn:hover {
+  background-color: #c0392b;
+}
+
+/* PDF View/Edit Styles */
+.app-document-controls {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+.app-page-controls {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+.app-doc-btn {
+  padding: 8px 16px;
+  background-color: #ecf0f1;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.app-doc-btn:hover {
+  background-color: #bdc3c7;
+}
+
+.app-doc-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.app-btn-primary {
+  background-color: #3498db;
+  color: white;
+}
+
+.app-btn-primary:hover {
+  background-color: #2980b9;
+}
+
+.app-btn-success {
+  background-color: #2ecc71;
+  color: white;
+}
+
+.app-btn-success:hover {
+  background-color: #27ae60;
+}
+
+.app-pdf-container {
+  background-color: #fff;
+  border-radius: 10px;
+  padding: 25px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  margin-bottom: 30px;
+  min-height: 700px;
+  display: flex;
+  justify-content: center;
+  position: relative;
+}
+
+.app-pdf-document {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.app-pdf-page {
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.app-annotation {
+  position: absolute;
+  z-index: 10;
+}
+
+.app-annotation-text {
+  background-color: rgba(255, 255, 0, 0.5);
+  padding: 5px 10px;
+  border-radius: 4px;
+  max-width: 200px;
+  word-wrap: break-word;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Annotation Dialog */
+.app-dialog {
+  border: none;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+  width: 400px;
+  max-width: 90vw;
+}
+
+.app-dialog::backdrop {
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.app-dialog h3 {
+  margin-bottom: 15px;
+  color: #2c3e50;
+}
+
+.app-dialog-textarea {
+  width: 100%;
+  min-height: 100px;
+  padding: 10px;
+  border: 1px solid #e0e0e0;
+  border-radius: 5px;
+  margin-bottom: 15px;
+  font-family: inherit;
+  resize: vertical;
+}
+
+.app-dialog-buttons {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+}
+
+.app-dialog-buttons button {
+  padding: 8px 16px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
   .app-wrapper {
-    display: flex;
-    min-height: 100vh;
-    background-color: #f8f9fa;
-  }
-  
-  /* Sidebar styling */
-  .app-sidebar {
-    width: 250px;
-    background-color: #0a0a32;
-    color: #ffffff;
-    display: flex;
     flex-direction: column;
-    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
   }
   
-  .app-logo {
-    padding: 24px 20px;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-  }
-  
-  .app-logo h2 {
-    color: #ffffff;
-    font-size: 22px;
-    font-weight: 600;
-  }
-  
-  .app-nav ul {
-    list-style-type: none;
-    padding: 16px 0;
-  }
-  
-  .app-nav li {
-    margin-bottom: 8px;
+  .app-sidebar {
+    width: 100%;
+    padding: 10px 0;
   }
   
   .app-nav-item {
-    display: flex;
-    align-items: center;
-    color: #e0e0e0;
-    text-decoration: none;
-    padding: 12px 20px;
-    transition: all 0.3s ease;
+    padding: 8px 15px;
   }
   
-  .app-nav-symbol {
-    font-size: 18px;
-    margin-right: 12px;
-  }
-  
-  .app-nav-item span:not(.app-nav-symbol) {
-    font-size: 16px;
-  }
-  
-  .app-nav-item:hover, .app-nav-active {
-    background-color: rgba(255, 255, 255, 0.1);
-    color: #ffffff;
-    border-left: 4px solid #4dabf7;
-  }
-  
-  /* Main content styling */
   .app-content {
-    flex-grow: 1;
-    padding: 32px;
-    max-width: calc(100% - 250px);
-  }
-  
-  .app-header {
-    margin-bottom: 32px;
-  }
-  
-  .app-header h1 {
-    font-size: 28px;
-    color: #212529;
-    margin-bottom: 8px;
-  }
-  
-  .app-header p {
-    color: #6c757d;
-    font-size: 16px;
-  }
-  
-  /* Search section styling */
-  .app-search-block {
-    background-color: #ffffff;
-    padding: 24px;
-    border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
-    margin-bottom: 32px;
+    padding: 15px;
   }
   
   .app-search-wrap {
-    display: flex;
-    align-items: center;
-    width: 100%;
-    border: 1px solid #ced4da;
-    border-radius: 6px;
-    overflow: hidden;
-    transition: all 0.3s ease;
-  }
-  
-  .app-search-wrap:focus-within {
-    border-color: #4dabf7;
-    box-shadow: 0 0 0 3px rgba(77, 171, 247, 0.2);
-  }
-  
-  .app-search-field {
-    flex: 1;
-    padding: 14px 16px;
-    border: none;
-    outline: none;
-    font-size: 16px;
+    flex-direction: column;
   }
   
   .app-voice-btn {
-    background: none;
-    border: none;
-    padding: 12px 16px;
-    font-size: 18px;
-    cursor: pointer;
-    transition: all 0.3s ease;
-  }
-  
-  .app-voice-btn:hover {
-    transform: scale(1.1);
-  }
-  
-  .app-dropdown {
-    margin-top: 4px;
-    background: #ffffff;
-    border: 1px solid #ced4da;
-    border-radius: 6px;
-    max-height: 300px;
-    overflow-y: auto;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    z-index: 100;
-  }
-  
-  .app-dropdown-item {
-    padding: 12px 16px;
-    cursor: pointer;
-    transition: all 0.2s ease;
-  }
-  
-  .app-dropdown-item:hover {
-    background-color: #f1f3f5;
-  }
-  
-  .app-upload-btn {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-top: 16px;
-    padding: 12px 24px;
-    background-color: #0a0a32;
-    color: #ffffff;
-    border: none;
-    border-radius: 6px;
-    cursor: pointer;
-    font-size: 16px;
-    transition: all 0.3s ease;
-    opacity: 0.7;
-  }
-  
-  .app-upload-symbol {
-    margin-right: 10px;
-    font-size: 18px;
-  }
-  
-  .app-btn-active {
-    opacity: 1;
-  }
-  
-  .app-upload-btn:hover:not(:disabled) {
-    background-color: #070728;
-    transform: translateY(-1px);
-  }
-  
-  .app-upload-btn:disabled {
-    cursor: not-allowed;
-  }
-  
-  /* Recent files section */
-  .app-recent-block {
-    background-color: #ffffff;
-    padding: 24px;
-    border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
-  }
-  
-  .app-recent-block h2 {
-    font-size: 20px;
-    color: #212529;
-    margin-bottom: 16px;
-    padding-bottom: 12px;
-    border-bottom: 1px solid #e9ecef;
+    margin-left: 0;
+    margin-top: 10px;
+    width: 100%;
   }
   
   .app-files-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    gap: 16px;
+    grid-template-columns: 1fr;
   }
   
-  .app-file-item {
-    display: flex;
-    align-items: center;
-    padding: 16px;
-    border: 1px solid #e9ecef;
-    border-radius: 6px;
-    transition: all 0.3s ease;
+  .app-document-controls,
+  .app-page-controls {
+    flex-direction: column;
+    align-items: stretch;
   }
-  
-  .app-file-item:hover {
-    background-color: #f8f9fa;
-    border-color: #ced4da;
-    transform: translateY(-2px);
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
-  }
-  
-  .app-file-symbol {
-    background-color: #e64980;
-    color: white;
-    width: 40px;
-    height: 40px;
-    border-radius: 6px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-weight: bold;
-    margin-right: 16px;
-  }
-  
-  .app-file-info h3 {
-    font-size: 16px;
-    color: #212529;
-    margin-bottom: 4px;
-  }
-  
-  .app-file-info p {
-    font-size: 14px;
-    color: #6c757d;
-  }
-  
-  /* Responsive adjustments */
-  @media (max-width: 768px) {
-    .app-wrapper {
-      flex-direction: column;
-    }
-    
-    .app-sidebar {
-      width: 100%;
-      height: auto;
-    }
-    
-    .app-nav ul {
-      display: flex;
-      overflow-x: auto;
-      padding: 12px;
-    }
-    
-    .app-nav li {
-      margin-bottom: 0;
-      margin-right: 8px;
-    }
-    
-    .app-nav-item {
-      flex-direction: column;
-      padding: 12px;
-      text-align: center;
-      border-radius: 6px;
-    }
-    
-    .app-nav-symbol {
-      margin-right: 0;
-      margin-bottom: 4px;
-      font-size: 20px;
-    }
-    
-    .app-nav-item span:not(.app-nav-symbol) {
-      font-size: 12px;
-    }
-    
-    .app-content {
-      max-width: 100%;
-      padding: 20px;
-    }
-    
-    .app-files-grid {
-      grid-template-columns: 1fr;
-  }
-  }
-  
+}

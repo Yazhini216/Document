@@ -382,12 +382,10 @@ background-color: beige;
   }
   
  
- 
-  
   .btn-help {
-    background-color: transparent;
-    border: none;
-    color: #666;
+    background-color: rgba(255, 255, 255, 0.15);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: var(--accent-color);
     width: 36px;
     height: 36px;
     border-radius: 50%;
@@ -397,11 +395,45 @@ background-color: beige;
     cursor: pointer;
     font-size: 22px;
     transition: var(--transition-smooth);
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .btn-help::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(circle at center, rgba(255, 255, 255, 0.2) 0%, transparent 70%);
+    opacity: 0;
+    transition: var(--transition-smooth);
   }
   
   .btn-help:hover {
-    background-color: #f0f0f0;
-    color: var(--primary-color);
+    background-color: rgba(255, 255, 255, 0.25);
+    color: var(--accent-color);
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  }
+  
+  .btn-help:hover::before {
+    opacity: 1;
+  }
+  
+  .btn-help:active {
+    transform: translateY(0);
+  }
+  
+  /* Dark theme adjustments */
+  .dark-theme .btn-help {
+    background-color: rgba(255, 255, 255, 0.1);
+    color: var(--accent-color);
+  }
+  
+  .dark-theme .btn-help:hover {
+    background-color: rgba(255, 255, 255, 0.15);
   }
   
   /* Hero Section */

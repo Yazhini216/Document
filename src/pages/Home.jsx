@@ -59,7 +59,7 @@ const Home = () => {
               </Link>
             </li>
             <li className="nav-item">
-              <Link to='/recent' className="nav-link">
+              <Link to='/rec' className="nav-link">
                 <i className='bx bx-time-five'></i>
                 <span>Recent</span>
                 <span className="badge count">3</span>
@@ -88,8 +88,8 @@ const Home = () => {
           <div className="cta-content">
             <h3>Upgrade to Pro</h3>
             <p>Get access to premium features</p>
-            <button className="btn-upgrade">
-              <i className='bx bx-crown'></i> Upgrade
+            <button className="btn-upgrade"><Link to='/price'>
+              <i className='bx bx-crown'></i> Upgrade</Link>
             </button>
           </div>
         </div>
@@ -130,7 +130,7 @@ const Home = () => {
             </div>
             
             <button className="btn-help" aria-label="Help">
-              <i className='bx bx-help-circle'></i>
+              <i className='bx bx-help-circle'></i>𝒷
             </button>
           </div>
         </header>
@@ -151,7 +151,7 @@ const Home = () => {
                 <Link to="/doc" className="btn btn-primary">
                   Get Started <i className='bx bx-right-arrow-alt'></i>
                 </Link>
-                <Link to="/abo" className="btn btn-secondary">
+                <Link to="/about" className="btn btn-secondary">
                   Learn More
                 </Link>
               </div>
