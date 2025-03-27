@@ -203,6 +203,7 @@ body {
   font-size: 1.25rem;
   font-weight: 500;
   margin: 0 0 0.5rem 0;
+  color:white;
 }
 
 .secondary-text {
@@ -374,7 +375,7 @@ body {
 
 .upload-button {
   background-color: var(--primary);
-  color: white;
+  color: rgb(20, 5, 67);
   border: none;
   border-radius: 10px;
   padding: 0.85rem 2.5rem;
@@ -383,7 +384,7 @@ body {
   cursor: pointer;
   transition: var(--transition);
   min-width: 220px;
-  box-shadow: 0 4px 15px rgba(108, 92, 231, 0.3);
+  box-shadow: 0 4px 15px rgb(20, 20, 244);
   position: relative;
   overflow: hidden;
 }
@@ -432,6 +433,7 @@ body {
   
   .primary-text {
     font-size: 1.1rem;
+    color:white;
   }
 }
 
@@ -507,7 +509,7 @@ body {
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-.file-manager-header h2 {
+.file-manager-header h2{
   font-size: 1.8rem;
   font-weight: 600;
   margin: 0;

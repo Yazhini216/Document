@@ -23,7 +23,7 @@ const About = () => {
               alt="Multiple Sharing Options"
             />
           </div>
-          <h2 className='z1'>Multiple Share</h2>
+          <h2 className='z1' >Multiple Share</h2>
           <p>Share work intelligently via shareable links, trackable links & website embeds.</p>
         </div>
 

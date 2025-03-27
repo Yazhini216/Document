@@ -141,9 +141,9 @@ const Doc = () => {
 
             {/* File Uploader */}
             <div className="file-uploader-container">
-                <header className="uploader-header">
-                    <h2>Collaborate with Brigades</h2>
-                </header>
+               
+                <div className="editor-title">Collaborate & Conquer with Brigades</div>
+               
 
                 <div
                     className={`drop-zone ${dragActive ? "active-drag" : ""} ${file ? "has-file" : ""}`}

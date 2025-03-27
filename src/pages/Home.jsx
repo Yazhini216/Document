@@ -47,34 +47,28 @@ const Home = () => {
           <ul>
             <li className="nav-item">
               <Link to='/doc' className="nav-link">
-                <i className='bx bx-rocket'></i>
+               
                 <span>Try Now</span>
                 <span className="badge new">New</span>
               </Link>
             </li>
             <li className="nav-item">
               <Link to='/' className="nav-link active">
-                <i className='bx bx-home-alt-2'></i>
+                
                 <span>Home</span>
               </Link>
             </li>
             <li className="nav-item">
               <Link to='/rec' className="nav-link">
-                <i className='bx bx-time-five'></i>
                 <span>Recent</span>
                 <span className="badge count">3</span>
               </Link>
             </li>
-            <li className="nav-item">
-              <Link to='/about' className="nav-link">
-                <i className='bx bx-info-circle'></i>
-                <span>About</span>
-              </Link>
-            </li>
+            
             <li className="nav-item">
               <Link to='/chat' className="nav-link">
-                <i className='bx bx-message-dots'></i>
-                <span>Chat</span>
+                
+                <span>About</span>
               </Link>
             </li>
           </ul>
@@ -107,10 +101,7 @@ const Home = () => {
             >
               <i className='bx bx-menu'></i>
             </button>
-            <div className="search-container">
-              <i className='bx bx-search search-icon'></i>
-              <input type="text" placeholder="Search..." className="search-input" />
-            </div>
+            
           </div>
           
           <div className="header-right">
