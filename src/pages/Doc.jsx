@@ -15,6 +15,8 @@ const Doc = () => {
     const [files, setFiles] = useState([]);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
+    const [fileContent, setFileContent] = useState("");
+      const [fileName, setFileName] = useState("");
 
     // Fetch Files
     useEffect(() => {
@@ -116,7 +118,29 @@ const Doc = () => {
             setUploading(false);
         }
     };
+// Handle file selection
+const handleFileUpload = (event) => {
+    const file = event.target.files[0];
+    if (file) {
+      setFileName(file.name);
+      const reader = new FileReader();
+      reader.onload = (e) => {
+        setFileContent(e.target.result);
+      };
+      reader.readAsText(file);
+    }
+  };
 
+  // Handle saving the edited content
+  const handleSave = () => {
+    const blob = new Blob([fileContent], { type: "text/plain" });
+    const link = document.createElement("a");
+    link.href = URL.createObjectURL(blob);
+    link.download = fileName || "edited_file.txt";
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  };
     return (
         <div className="doc-container">
             {/* Document Editor */}
@@ -189,11 +213,37 @@ const Doc = () => {
                     {uploading ? "Uploading..." : "Upload File"}
                 </button>
             </div>
-
+            <div className="doc-container">
+            {/* Document Editor */}
+            <div className="document-editor-container">
+                <h2 className="editor-title">File Editor</h2>
+            <div className="p-4 max-w-2xl mx-auto">
+      
+      <input type="file" accept=".txt,.md,.json" onChange={handleFileUpload} className="mb-2" />
+      {fileContent && (
+        <>
+          <textarea
+            className="w-full h-60 border p-2 rounded-md"
+            value={fileContent}
+            onChange={(e) => setFileContent(e.target.value)}
+          ></textarea>
+          <button
+            className="bg-blue-500 text-white px-4 py-2 mt-2 rounded-md"
+            onClick={handleSave}
+          >
+            Save File
+          </button>
+        </>
+      )}
+    </div>
+    </div>
+    </div>
             {/* File Viewer */}
-            <div className="file-manager-container">
+            <div className="doc-container">
+            {/* Document Editor */}
+            <div className="document-editor-container">
+                <h2 className="editor-title">Upload and View</h2>
                 <header className="file-manager-header">
-                    <h2>Document Library</h2>
                     <span className="file-count">{files.length} Files</span>
                 </header>
 
@@ -219,6 +269,7 @@ const Doc = () => {
                         ))}
                     </ul>
                 )}
+            </div>
             </div>
         </div>
     );

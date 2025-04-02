@@ -82,6 +82,7 @@ body {
 /* File uploader container */
 .file-uploader-container {
   width: 100%;
+  padding-top: 100px;
   max-width: 650px;
   margin: 0 auto;
   background-color: var(--bg-card);
