@@ -10,8 +10,8 @@ const Chat = () => {
           <nav className="main-nav">
             <ul>
               <li><a href="/">Home</a></li>
-              <li><a href="/about">Features</a></li>
               <li><a href="/price">Pricing</a></li>
+              <li><a href="/about">Features</a></li>
               <li><a href="/contact">Contact</a></li>
             </ul>
           </nav>
