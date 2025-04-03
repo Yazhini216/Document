@@ -71,6 +71,13 @@ const Home = () => {
                 <span>About</span>
               </Link>
             </li>
+            
+            <li className="nav-item">
+              <Link to='/contact' className="nav-link">
+                
+                <span>Contact</span>
+              </Link>
+            </li>
           </ul>
         </nav>
         
